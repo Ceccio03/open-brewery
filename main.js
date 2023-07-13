@@ -1,0 +1,1 @@
+DBService.getBreweries().then(birrerie => console.log(birrerie));
