@@ -1,6 +1,6 @@
 let pageNumber = 1;
 
-DBService.getBreweries(pageNumber).then(breweries => console.log(breweries));
+DBService.getBreweries(pageNumber).then(breweries => render(breweries));
 
 function render(breweries) {
     for (const brewery of breweries) {
@@ -10,10 +10,10 @@ function render(breweries) {
 
 function previous() {
     pageNumber--;
-    DBService.getBreweries(pageNumber).then(breweries => console.log(breweries));
+    DBService.getBreweries(pageNumber).then(breweries => render(breweries));
 }
 
 function next() {
     pageNumber++;
-    DBService.getBreweries(pageNumber).then(breweries => console.log(breweries));
+    DBService.getBreweries(pageNumber).then(breweries => render(breweries));
 }
