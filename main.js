@@ -9,13 +9,38 @@ function render(breweries) {
 
     for (const brewery of breweries) {
         const cardDiv = document.createElement('div');
-        const nameStrong = document.createElement('strong');
-        const nameNode = document.createTextNode(brewery.name);
+        cardDiv.classList.add('brewery-card');
 
-        nameStrong.appendChild(nameNode);
-        cardDiv.appendChild(nameStrong);
+        // const nameStrong = document.createElement('strong');
+        // const nameNode = document.createTextNode(brewery.name);
+        // nameStrong.appendChild(nameNode);
+        // cardDiv.appendChild(nameStrong);
+        cardDiv.appendChild(createElementWithString('strong', brewery.name));
+        const addressDiv = document.createElement('div');
+
+        // const citySpan = document.createElement('span');
+        // const cityNode = document.createTextNode(brewery.city);
+        // citySpan.appendChild(cityNode);
+        // addressDiv.appendChild(citySpan);
+        addressDiv.appendChild(createElementWithString('span', brewery.city));
+
+        // const stateSpan = document.createElement('span');
+        // const stateNode = document.createTextNode(', ' + brewery.state);
+        // stateSpan.appendChild(stateNode);
+        // addressDiv.appendChild(stateSpan);
+        addressDiv.appendChild(createElementWithString('span', ', ' + brewery.state));
+        cardDiv.appendChild(addressDiv);
         mainContainer.appendChild(cardDiv);
     }
+}
+
+function createElementWithString(elementName, contentString) {
+    const element = document.createElement(elementName);
+    const node = document.createTextNode(contentString);
+
+    element.appendChild(node);
+
+    return element;
 }
 
 function previous() {
