@@ -6,4 +6,8 @@ class DBService {
 
         return fetch(url).then(resp => resp.json());
     }
+
+    static getSingleBrewery(id) {
+        const url
+    }
 }

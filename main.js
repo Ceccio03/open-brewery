@@ -7,7 +7,8 @@ function render(breweries) {
 
     mainContainer.innerHTML = '';
 
-    for (const brewery of breweries) {
+    for (let i = 0; i < breweries.length; i++) {
+        const brewery = breweries[i];
         const cardDiv = document.createElement('div');
         cardDiv.classList.add('brewery-card');
 
@@ -16,6 +17,7 @@ function render(breweries) {
         // nameStrong.appendChild(nameNode);
         // cardDiv.appendChild(nameStrong);
         cardDiv.appendChild(createElementWithString('strong', brewery.name));
+        
         const addressDiv = document.createElement('div');
 
         // const citySpan = document.createElement('span');
@@ -31,7 +33,7 @@ function render(breweries) {
         addressDiv.appendChild(createElementWithString('span', ', ' + brewery.state));
         cardDiv.appendChild(addressDiv);
         const detailButton = createElementWithString('button', 'dettaglio');
-        detailButton.addEventListener('click', () => console.log('mi hai cliccato'));
+        detailButton.addEventListener('click', () => saveAndNavigate(...brewery));
         cardDiv.appendChild(detailButton);
         mainContainer.appendChild(cardDiv);
     }
