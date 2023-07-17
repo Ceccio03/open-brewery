@@ -37,6 +37,11 @@ function render(breweries) {
     }
 }
 
+function saveAndNavigate(brewery) {
+    sessionStorage.setItem('selectedBrewery', JSON.stringify(brewery));
+    window.location = './detail.html';
+}
+
 function createElementWithString(elementName, contentString) {
     const element = document.createElement(elementName);
     const node = document.createTextNode(contentString);
