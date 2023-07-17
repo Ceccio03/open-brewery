@@ -32,7 +32,7 @@ function render(breweries) {
         cardDiv.appendChild(addressDiv);
         const detailButton = createElementWithString('button', 'dettaglio');
         detailButton.addEventListener('click', () => console.log('mi hai cliccato'));
-        cardDiv.appendChild();
+        cardDiv.appendChild(detailButton);
         mainContainer.appendChild(cardDiv);
     }
 }
