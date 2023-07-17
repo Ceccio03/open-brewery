@@ -53,6 +53,9 @@ function createElementWithString(elementName, contentString) {
 
 function previous() {
     pageNumber--;
+    if (pageNumber < 1) {
+        pageNumber = 1;
+    }
     DBService.getBreweries(pageNumber).then(breweries => render(breweries));
 }
 
