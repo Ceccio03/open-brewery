@@ -30,6 +30,9 @@ function render(breweries) {
         // addressDiv.appendChild(stateSpan);
         addressDiv.appendChild(createElementWithString('span', ', ' + brewery.state));
         cardDiv.appendChild(addressDiv);
+        const detailButton = createElementWithString('button', 'dettaglio');
+        detailButton.addEventListener('click', () => console.log('mi hai cliccato'));
+        cardDiv.appendChild();
         mainContainer.appendChild(cardDiv);
     }
 }
